@@ -4,7 +4,7 @@
 OmniTransfer is a professional-looking WPF wrapper for Robocopy, designed to handle high-volume data migrations with a focus on speed, safety, and system-level efficiency. 
 
 ## Key Features
-**48-Thread Optimization:** Hard-capped, selectable thread counts to maximize I/O throughput without saturating system resources.
+**Thread Optimization:** Hard-capped, selectable thread counts to maximize I/O throughput without saturating system resources.
 
 **Windows Shell Integration:** Custom Registry-based context menu for "Right-Click to Move" functionality.
 
@@ -12,7 +12,7 @@ OmniTransfer is a professional-looking WPF wrapper for Robocopy, designed to han
 * Handle multi-file selections via the Windows 'Player' MultiSelectModel.
 
 ## Built With
-* **C# / WPF** (.NET 8.0)
+* **C# / WPF** (.NET 10.0)
 * **Windows Registry API** for shell extensions
 * **Robocopy Engine** for robust, resumable file operations
 
