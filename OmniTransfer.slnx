@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="TextFile1.txt" />
+  </Folder>
+  <Project Path="OmniTransfer.csproj" />
+</Solution>

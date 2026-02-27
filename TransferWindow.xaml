@@ -1,0 +1,52 @@
+﻿<Window x:Class="OmniTransfer.TransferWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="OmniTransfer - Ready to Move" Height="400" Width="700">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Margin="0,0,0,10">
+            <DockPanel LastChildFill="False">
+                <TextBlock Text="Transfer Progress:" FontWeight="Bold" DockPanel.Dock="Left"/>
+                <TextBlock x:Name="TxtCounter" Text="" FontWeight="Bold" Foreground="#0078D4" DockPanel.Dock="Right"/>
+            </DockPanel>
+
+            <Grid Margin="0,5,0,0">
+                <ProgressBar x:Name="TransferProgressBar" Height="25" Minimum="0" Maximum="100" Foreground="#0078D4"/>
+                <TextBlock x:Name="TxtPercent" Text="0%" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            </Grid>
+
+            <TextBlock Text="Detailed Log:" Margin="0,10,0,5"/>
+            <ListBox x:Name="FileListBox" Height="150"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="5">
+    <Expander Header="Advanced Robocopy Settings" Background="#F9F9F9" Margin="0,0,0,10">
+        <StackPanel Margin="10">
+            <TextBlock x:Name="LblThreads" Margin="0,5" Text="Max Threads:"/>
+                    <Slider x:Name="SldThreads" Minimum="1" Maximum="128" Value="8" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+            <TextBlock Text="Retries (0-20):" Margin="0,10,0,5"/>
+                    <Slider x:Name="SldRetries" Minimum="0" Maximum="20" Value="0" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+            <TextBlock Text="Wait Time (0-60 seconds):" Margin="0,10,0,5"/>
+                    <Slider x:Name="SldWait" Minimum="0" Maximum="60" Value="0" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+            <CheckBox x:Name="ChkSetDefault" Content="Set current selection as default folder" Margin="0,10" IsEnabled="False"/>
+            <Button x:Name="BtnSaveSettings" Content="Save Settings" Width="120" HorizontalAlignment="Left" Click="BtnSaveSettings_Click"/>
+        </StackPanel>
+    </Expander>
+
+    <StackPanel Orientation="Horizontal">
+        <TextBox x:Name="TxtDestination" Width="350" Height="30" IsReadOnly="True" Background="#F0F0F0" VerticalContentAlignment="Center"/>
+        <Button x:Name="BtnBrowse" Content="Browse" Width="80" Margin="5,0" Click="BtnBrowse_Click"/>
+        <Button x:Name="BtnStart" Content="Start" Width="80" Background="#0078D4" Foreground="White" IsEnabled="False" Click="BtnStart_Click"/>
+    </StackPanel>
+</StackPanel>
+
+    </Grid>
+</Window>
